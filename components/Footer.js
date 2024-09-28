@@ -1,51 +1,49 @@
 import Image from "next/image";
 import styles from "./Footer.module.css";
 
+const ITEMS = [
+  {
+    href: "https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
+    src: "https://nextjs.org/icons/file.svg",
+    alt: "File icon",
+    text: "Learn",
+  },
+  {
+    href: "https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
+    src: "https://nextjs.org/icons/window.svg",
+    alt: "Window icon",
+    text: "Examples",
+  },
+  {
+    href: "https://nextjs.org?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
+    src: "https://nextjs.org/icons/globe.svg",
+    alt: "Globe icon",
+    text: "Go to nextjs.org →",
+  },
+];
+
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <a
-        href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          aria-hidden
-          src="https://nextjs.org/icons/file.svg"
-          alt="File icon"
-          width={16}
-          height={16}
-        />
-        Learn
-      </a>
-      <a
-        href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          aria-hidden
-          src="https://nextjs.org/icons/window.svg"
-          alt="Window icon"
-          width={16}
-          height={16}
-        />
-        Examples
-      </a>
-      <a
-        href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          aria-hidden
-          src="https://nextjs.org/icons/globe.svg"
-          alt="Globe icon"
-          width={16}
-          height={16}
-        />
-        Go to nextjs.org →
-      </a>
+      {ITEMS.map((item) => {
+        return (
+          <a
+            key={item.href}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              aria-hidden
+              src={item.src}
+              alt={item.alt}
+              width={16}
+              height={16}
+            />
+            {item.text}
+          </a>
+        );
+      })}
     </footer>
   );
 }
