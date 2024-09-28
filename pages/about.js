@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import styles from "@/styles/Home.module.css";
 import { Footer } from "@/components/Footer";
 import { Links } from "@/components/Links";
+import { Headline } from "@/components/Headline";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,13 +36,7 @@ export default function Home() {
             height={38}
             priority
           />
-          <ol>
-            <li>
-              Get started by editing <code>pages/about.js</code>.
-            </li>
-            <li>Save and see your changes instantly.</li>
-          </ol>
-
+          <Headline page='about'/>
           <Links />
         </main>
         <Footer />
