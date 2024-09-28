@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Index Page</title>
+        <title>About Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
@@ -37,7 +37,7 @@ export default function Home() {
           />
           <ol>
             <li>
-              Get started by editing <code>pages/index.js</code>.
+              Get started by editing <code>pages/about.js</code>.
             </li>
             <li>Save and see your changes instantly.</li>
           </ol>
