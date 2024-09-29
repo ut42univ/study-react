@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Footer.module.css";
+import { useState } from "react";
 
 const ITEMS = [
   {
@@ -23,9 +24,18 @@ const ITEMS = [
 ];
 
 export function Footer() {
+  const [items, setItems] = useState(ITEMS);
+
+  const handleReduce = () => {
+    setItems((prevItems) => {
+      return prevItems.slice(0, prevItems.length - 1);
+    });
+  };
+
   return (
     <footer className={styles.footer}>
-      {ITEMS.map((item) => {
+      <button onClick={handleReduce}>減らす</button>
+      {items.map((item) => {
         return (
           <a
             key={item.href}
