@@ -6,11 +6,9 @@ import { useEffect } from "react";
 
 export function Main(props) {
   useEffect(() => {
-    console.log("Mounted");
     document.body.style.backgroundColor = props.color || "";
 
     return () => {
-      console.log("Unmounted");
       document.body.style.backgroundColor = "";
     };
   }, []);
