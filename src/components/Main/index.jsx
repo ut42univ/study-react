@@ -2,16 +2,10 @@ import Image from "next/image";
 import styles from "./Main.module.css";
 import { Links } from "@/src/components/Links";
 import { Headline } from "@/src/components/Headline";
-import { useEffect } from "react";
+import { useBgColor } from "@/src/hooks/useBgColor";
 
 export function Main(props) {
-  useEffect(() => {
-    document.body.style.backgroundColor = props.color || "";
-
-    return () => {
-      document.body.style.backgroundColor = "";
-    };
-  }, []);
+  useBgColor(props.color);
 
   return (
     <main className={styles.main}>
