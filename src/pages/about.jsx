@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <div className={`${styles.page}`}>
         <Header />
-        <Main page="about" />
+        <Main page="about" color="lightblue" />
         <Footer />
       </div>
     </div>

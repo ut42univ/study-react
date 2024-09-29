@@ -2,8 +2,19 @@ import Image from "next/image";
 import styles from "./Main.module.css";
 import { Links } from "@/src/components/Links";
 import { Headline } from "@/src/components/Headline";
+import { useEffect } from "react";
 
 export function Main(props) {
+  useEffect(() => {
+    console.log("Mounted");
+    document.body.style.backgroundColor = props.color || "";
+
+    return () => {
+      console.log("Unmounted");
+      document.body.style.backgroundColor = "";
+    };
+  }, []);
+
   return (
     <main className={styles.main}>
       <Image
