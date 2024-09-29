@@ -10,15 +10,11 @@ export default function Home() {
   const [text, setText] = useState("");
   const [isShow, setIsShow] = useState(true);
 
-  const handleClick = useCallback(
-    (event) => {
-      if (count < 10) {
-        setCount((count) => count + 1);
-      }
-      console.log(count);
-    },
-    [count]
-  );
+  const handleClick = useCallback(() => {
+    if (count < 10) {
+      setCount((prevCount) => prevCount + 1);
+    }
+  }, [count]);
 
   const handleChange = useCallback((event) => {
     if (event.target.value.length > 5) {
@@ -29,8 +25,8 @@ export default function Home() {
   }, []);
 
   const handleDisplay = useCallback(() => {
-    setIsShow((isShow) => !isShow);
-  });
+    setIsShow((prevIsShow) => !prevIsShow);
+  }, []);
 
   return (
     <div>
