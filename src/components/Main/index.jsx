@@ -2,11 +2,8 @@ import Image from "next/image";
 import styles from "./Main.module.css";
 import { Links } from "@/src/components/Links";
 import { Headline } from "@/src/components/Headline";
-import { useBgColor } from "@/src/hooks/useBgColor";
 
 export function Main(props) {
-  useBgColor(props.color);
-
   return (
     <main className={styles.main}>
       <Image
