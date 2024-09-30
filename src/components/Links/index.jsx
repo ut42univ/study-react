@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./Links.module.css";
 
-export function Links() {
+export const Links = () => {
   return (
     <div className={styles.ctas}>
       <a
@@ -29,4 +29,4 @@ export function Links() {
       </a>
     </div>
   );
-}
+};

@@ -23,7 +23,7 @@ const ITEMS = [
   },
 ];
 
-export function Footer() {
+export const Footer = () => {
   const [items, setItems] = useState(ITEMS);
 
   const handleReduce = () => {
@@ -56,4 +56,4 @@ export function Footer() {
       })}
     </footer>
   );
-}
+};
