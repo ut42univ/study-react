@@ -6,8 +6,8 @@ import { Header } from "@/src/components/Header";
 
 export default function About(props) {
   const {
-    count,
     isShow,
+    doubleCount,
     handleClick,
     handleDisplay,
     text,
@@ -24,7 +24,7 @@ export default function About(props) {
       <div className={`${styles.page}`}>
         <Header />
 
-        {isShow ? <h1>{count}</h1> : null}
+        {isShow ? <h1>{doubleCount}</h1> : null}
         <button onClick={handleClick}>ボタン</button>
         <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
 
